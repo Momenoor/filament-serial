@@ -1,0 +1,80 @@
+{
+    "name": "momenoor/filament-serial",
+    "description": "A Filament V3 form macro for `TextInput` that allows you to easily format and manage serial numbers with optional prefixes, suffixes, separators, and padded digits.",
+    "keywords": [
+        "momenoor",
+        "laravel",
+        "filament-serial",
+        "filament",
+        "filamentphp",
+        "laravel-filament"
+    ],
+    "homepage": "https://github.com/momenoor/filament-serial",
+    "support": {
+        "issues": "https://github.com/momenoor/filament-serial/issues",
+        "source": "https://github.com/momenoor/filament-serial"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Momen Noor",
+            "email": "momen.noor@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "~8.1|~8.2|~8.3|~8.4",
+        "akaunting/laravel-money": "^1.2|^2.0|^3.0|^4.0|^5.2|^6",
+        "filament/tables": "^3.0",
+        "illuminate/contracts": "^10.0|^11|^12.0",
+        "spatie/laravel-package-tools": "^1.15.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.9",
+        "larastan/larastan": "^2.7.0",
+        "orchestra/testbench": "^8.0|^10.0",
+        "pestphp/pest": "^2.0|^3.7",
+        "pestphp/pest-plugin-arch": "^2.0|^3.0",
+        "pestphp/pest-plugin-laravel": "^2.0|^3.1",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0|^2.0",
+        "phpstan/phpstan-phpunit": "^1.0|^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Momenoor\\FilamentSerial\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Momenoor\\FilamentSerial\\FilamentSerialServiceProvider"
+            ],
+            "aliases": {
+                "FilamentSerial": "Momenoor\\FilamentSerial\\Facades\\FilamentSerial"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
